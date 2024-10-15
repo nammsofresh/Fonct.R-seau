@@ -238,9 +238,19 @@ public (active)
 
 ```
 > [louis@routeur ~]$ sudo dnf install dhcp-server
-
+```
+```
 > [louis@routeur ~]$ sudo nano /etc/dhcp/dhcpd.conf
 
+> [louis@routeur ~]$ sudo cat /etc/dhcp/dhcpd.conf
+
+subnet 10.5.1.0 netmask 255.255.255.0 {
+        range 10.5.1.137 10.5.1.237;
+        option routers 10.5.1.254;
+        option domain-name-servers 1.1.1.1;
+}
+```
+```
 > [louis@routeur ~]$ sudo systemctl start dhcpd
 ```
 
