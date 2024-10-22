@@ -327,7 +327,7 @@ voir dns_query.pcap
 > récupérez une IP en DHCP sur ce nouveau client2.tp6.b1
 
 ```
-louis@client1:~$ ip a
+louis@client2:~$ ip a
 
 2: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether 08:00:27:2c:24:80 brd ff:ff:ff:ff:ff:ff
@@ -340,7 +340,7 @@ louis@client1:~$ ip a
 > vérifiez que vous avez bien 10.6.2.12 comme serveur DNS à contacter
 
 ```
-louis@client1:~$ cat /etc/resolv.conf
+louis@client2:~$ cat /etc/resolv.conf
 
 nameserver 10.6.2.12
 options edns0 trust-ad
@@ -350,7 +350,7 @@ search .
 > vous devriez pouvoir visiter http://web.tp6.b1 avec le navigateur, ça devrait fonctionner sans aucune autre action.
 
 ```
-louis@client1:~$ curl http://web.tp6.b1
+louis@client2:~$ curl http://web.tp6.b1
 <!doctype html>
 <html>
   <head>
